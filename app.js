@@ -7,6 +7,7 @@ form.addEventListener("submit",function(e){
     console.log('submitted')
     console.dir(this)
     console.log(this.elements.query.value);
+    this.query.value = '';
 
     const fetchData = async(id)=>{
         try{
@@ -22,5 +23,10 @@ form.addEventListener("submit",function(e){
     }
     
 fetchData(searchTerm);
+
   
+})
+const reset = document.querySelector('#reset');
+reset.addEventListener('click',()=>{
+    images.innerHTML = '';
 })
